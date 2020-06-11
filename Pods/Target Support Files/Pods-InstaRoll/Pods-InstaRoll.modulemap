@@ -1,0 +1,6 @@
+framework module Pods_InstaRoll {
+  umbrella header "Pods-InstaRoll-umbrella.h"
+
+  export *
+  module * { export * }
+}
