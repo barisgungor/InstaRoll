@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "buttonAction(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "06B78F84-20A1-40A7-A231-4C62DF51A4BE - 4b4dade72e61d2a9"
@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -80,8 +80,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "9CE86556-8A95-421F-8E7B-D07FA752F066 - 7acb097311d0cf2a"
@@ -126,42 +126,42 @@
             filePath = "InstaRoll/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EA3769E4-3DFE-4341-BD88-0A4527CB5BBF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaRoll/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C1B45197-0FE7-41B7-A72D-D9BFCFFED443"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InstaRoll/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,8 +192,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "buttonAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -242,38 +242,54 @@
             endingLineNumber = "104"
             landmarkName = "authenticate(with:completionHandler:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4E047466-0730-4033-89D0-DA2B6F11376F - 10d32c2f859b5556"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Result&lt;Swift.Array&lt;__C.NSHTTPCookie&gt;, Swift.Error&gt;) -&gt; () in InstaRoll.APIHandler.authenticate(with: InstaRoll.Authentication.Request, completionHandler: (Swift.Result&lt;(InstaRoll.Authentication.Response, InstaRoll.APIHandler), Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "InstaRoll"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barisgungor/Documents/Belgeler%20-%20Bar%C4%B1s%CC%A7%20MacBook%20Pro/Giris%CC%A7imlerim/InstaRoll/InstaRoll/InstaRoll/SwiftyInsta/API/Client/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "1666">
-               </Location>
-               <Location
-                  uuid = "4E047466-0730-4033-89D0-DA2B6F11376F - 8b5652d32c8093eb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSHTTPCookie) -&gt; Swift.Bool in closure #2 (Swift.Result&lt;Swift.Array&lt;__C.NSHTTPCookie&gt;, Swift.Error&gt;) -&gt; () in InstaRoll.APIHandler.authenticate(with: InstaRoll.Authentication.Request, completionHandler: (Swift.Result&lt;(InstaRoll.Authentication.Response, InstaRoll.APIHandler), Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "InstaRoll"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/barisgungor/Documents/Belgeler%20-%20Bar%C4%B1s%CC%A7%20MacBook%20Pro/Giris%CC%A7imlerim/InstaRoll/InstaRoll/InstaRoll/SwiftyInsta/API/Client/APIHandler.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAECC689-7575-450F-AD47-4C5C911722D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaRoll/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E6E718A-D741-4F4C-8DED-177304C26E8B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaRoll/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "144B9DBC-F7A6-4030-8A78-688ABC33B2EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InstaRoll/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "buttonCodeAction(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

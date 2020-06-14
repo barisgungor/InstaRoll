@@ -53,33 +53,56 @@ class ViewController: UIViewController {
         guard let cache = Authentication.Response.persisted(with: key) else { return print("`Authentication.Response` not found.") }
         
         print("\(cache.self)")
-//        print(cache.identifier)
+        print(cache.identifier)
         handler.authenticate(with: .cache(cache)) { result in
             do{
-                
-           
 
+
+
+            }catch{
+
+                print(error)
+
+            }
+
+        }
+        
+    
+        
+        
+      
+        
+        
+        
+        
+        handler.users.following(user: .me,
+        with: .init(maxPagesToLoad: .max),
+        updateHandler: nil,
+        completionHandler: { response, error in
+            do{
+                let responseArray = try! response.get()
+
+                for index in responseArray{
+//                    print("\(index.username)" + "  " + "\(index.name!)" + "  " + "\(index.thumbnail!)"  + "  " + "\(index.friendship?.isFollowingYou)")
+                    self.handler.users.friendshipStatus(withUser: .username(index.username), completionHandler: {res in
+                        
+                        guard let status = try? res.get() else {
+                            
+                            return}
+                        print("ADI:  \(index.username) " + "Takip etme durumu: \(status.isFollowingYou!)" + " " + " Benim takip etme durmum: \(status.isFollowedByYou)" + " " + "Yakın Arkadaş Durmu: \(status.isInYourCloseFriendsList)")
+                      
+                        
+                     })
+            }
+               
+                
+                
             }catch{
                 
                 print(error)
                 
             }
-
-        }
-       
-//        handler.users.following(user: .me,
-//        with: .init(maxPagesToLoad: .max),
-//        updateHandler: nil,
-//        completionHandler: { response, error in
-//
-//            let responseArray = try! response.get()
-//
-//            for index in responseArray{
-//
-//
-//            }
-//
-//        })
+        })
         
 //        handler.messages.inbox(with: .init(maxPagesToLoad: .max),
 //        updateHandler: nil,
@@ -124,25 +147,25 @@ class ViewController: UIViewController {
 //            <#code#>
 //        }
         
-        handler.stories.reelBy(user: handler.user!.reference) { (response) in
-            
-            do{
-                 let responseArray = try response.get()
-                
-            
-                for index in responseArray.items{
-                print( index.cover?.rawResponse)
-                   
-                }
-
-            }catch{
-                
-                print(error)
-                
-            }
-
-            
-        }
+//        handler.stories.reelBy(user: handler.user!.reference) { (response) in
+//            
+//            do{
+//                 let responseArray = try response.get()
+//                
+//            
+//                for index in responseArray.items{
+//                print( index.cover?.rawResponse)
+//                   
+//                }
+//
+//            }catch{
+//                
+//                print(error)
+//                
+//            }
+//
+//            
+//        }
         
     }
     

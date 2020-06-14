@@ -7,6 +7,7 @@ target 'InstaRoll' do
 #	pod 'SwiftyInsta', '~> 2.0'
 #  pod 'KeychainSwift'
   pod 'CryptoSwift'
+  pod 'RealmSwift'
   # Pods for InstaRoll
 
 end
