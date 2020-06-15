@@ -14,7 +14,7 @@ class TopStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var followNumber: UILabel!
     @IBOutlet weak var followLabel: UILabel!
     @IBOutlet weak var followerNumber: UILabel!
-    @IBOutlet weak var FollowerLabel: UILabel!
+    @IBOutlet weak var followerLabel: UILabel!
     
     
     

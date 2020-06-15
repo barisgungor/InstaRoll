@@ -13,11 +13,21 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var followerNumber : String!
+    var followedNumber : String!
+    var whoNotFollowing : String!
+    var youNotFollowing : String!
     //    MARK : -Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        DataSource.shared.delegate = self
+        DataSource.shared.checkSignIn()
+        
+        
         configureUI()
-        // Do any additional setup after loading the view.
+       
     }
     
     
@@ -114,6 +124,9 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource{
         case 0:
             self.tableView.register(UINib(nibName: "TopStatusTableViewCell", bundle: nil), forCellReuseIdentifier: "TopStatusTableViewCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "TopStatusTableViewCell", for: indexPath) as! TopStatusTableViewCell
+            cell.followerNumber.text = followerNumber
+            cell.followNumber.text = followedNumber
+            
             return cell
         case 1:
             self.tableView.register(UINib(nibName: "GainLoseFollowersTableViewCell", bundle: nil), forCellReuseIdentifier: "GainLoseFollowersTableViewCell")
@@ -126,6 +139,8 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource{
             self.tableView.register(UINib(nibName: "GainLoseFollowersTableViewCell", bundle: nil), forCellReuseIdentifier: "GainLoseFollowersTableViewCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "GainLoseFollowersTableViewCell", for: indexPath) as! GainLoseFollowersTableViewCell
                 cell.rightViewTitle.text = "Beni Takip Etmeyen"
+                cell.rightViewNumber.text = youNotFollowing
+                cell.leftViewNumber.text = whoNotFollowing
                 cell.leftViewTitle.text = "Benim Takip Etmediğim"
                        return cell
         case 3:
@@ -145,8 +160,86 @@ extension ProfileViewController : UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+}
+
+extension ProfileViewController : DataSourceDelegate{
     
+    func signUpDone(success: Bool, key: String?) {
+        
+        if !success{
+            let login = LoginWebViewController { controller, result in
+                      controller.dismiss(animated: true, completion: nil)
+                       guard let (response, _) = try? result.get() else { return print("Login failed.") }
+                       print("Login successful.")
+                   
+                       guard let key = response.persist() else { return print("`Authentication.Response` could not be persisted.") }
+                       
+                       UserDefaults.standard.set(key, forKey: "current.account")
+                       UserDefaults.standard.synchronize()
+                   }
+                   if #available(iOS 13, *) {
+                       present(login, animated: true, completion: nil) // just swipe down to dismiss.
+                   } else {
+                       present(UINavigationController(rootViewController: login),  // already adds a `Cancel` button to dismiss it.
+                               animated: true,
+                               completion: nil)
+                   }
+            
+        }else{
+            
+            DataSource.shared.getFollowed()
+            DataSource.shared.getFollowers()
+            DataSource.shared.getWhoNotFollowingYou()
+            DataSource.shared.getYouNotFollowingWho()
+            
+        }
+        
+        
+    }
     
+    func userFallowers(success: Bool, followers: [User]?) {
+        
+        if success{
+            
+            
+            self.followerNumber = "\(followers!.count)"
+            tableView.reloadData()
+        
+        }
+        
+        
+    }
+    func userFallowed(success: Bool, followed: [User]?) {
+        
+        if success{
+                   
+                   
+            self.followedNumber = "\(followed!.count)"
+            tableView.reloadData()
+               
+        }
+    }
+    
+    func whoNotFollowingYou(success: Bool, users: [User]?) {
+        
+        
+        if success{
+                          
+            self.whoNotFollowing = "\(users!.count)"
+            tableView.reloadData()
+        }
+    }
+    
+    func youNotFollowingWho(success: Bool, users: [User]?) {
+        if success{
+                                 
+            self.youNotFollowing = "\(users!.count)"
+            tableView.reloadData()
+            
+        }
+        
+    }
+   
     
     
     

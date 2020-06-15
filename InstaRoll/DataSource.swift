@@ -10,25 +10,26 @@ import Foundation
 
 protocol DataSourceDelegate {
     func signUpDone(success: Bool, key: String?)
-    func userFallowers(success: Bool, followers: [User])
-    func userFallowed(success: Bool, followed: [User])
-    func whoNotFollowingYou(success: Bool, users: [User])
-    func youNotFollowingWho(success: Bool, users: [User])
+    func userFallowers(success: Bool, followers: [User]?)
+    func userFallowed(success: Bool, followed: [User]?)
+    func whoNotFollowingYou(success: Bool, users: [User]?)
+    func youNotFollowingWho(success: Bool, users: [User]?)
 }
 
 extension DataSourceDelegate {
     
     func signUpDone(success: Bool, key: String?){return}
-    func userFallowers(success: Bool, followers: [User]?){}
-    func userFallowed(success: Bool, followed: [User]?){}
-    func whoNotFollowingYou(success: Bool, users: [User]?){}
-    func youNotFollowingWho(success: Bool, users: [User]?){}
+    func userFallowers(success: Bool, followers: [User]?){return}
+    func userFallowed(success: Bool, followed: [User]?){return}
+    func whoNotFollowingYou(success: Bool, users: [User]?){return}
+    func youNotFollowingWho(success: Bool, users: [User]?){return}
 }
 
 class DataSource{
     
     private init(){}
     
+    static let shared = DataSource()
     var delegate : DataSourceDelegate!
     let handler : APIHandler = APIHandler()
     fileprivate lazy var dateFormatter : DateFormatter = {
@@ -74,7 +75,7 @@ class DataSource{
     
     func getFollowed(){
         
-        handler.users.following(user: .me, with: .init(maxPagesToLoad: .max), updateHandler: nil, completionHandler: { response, error in
+    handler.users.followed(byUser: .me, with: .init(maxPagesToLoad: .max), updateHandler: nil, completionHandler: { response, error in
 
                    guard let userArray = try? response.get() else {
                        self.delegate.userFallowed(success: false, followed: nil)
@@ -142,13 +143,21 @@ class DataSource{
                         }
                         if index.username == userArray.last?.username{
                             
-                            self.delegate.whoNotFollowingYou(success: true, users: statusArray)
+                            self.delegate.youNotFollowingWho(success: true, users: statusArray)
                             
                         }
                 
                     })
                 }
         })
+        
+    }
+    
+    
+    func getProfilePicture(){
+        
+     
+        
         
     }
     

@@ -89,9 +89,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="FollowerLabel" destination="hSI-Jl-DKX" id="Ol2-N5-1a2"/>
                 <outlet property="followLabel" destination="tl7-SY-z8V" id="u0M-lC-GPQ"/>
                 <outlet property="followNumber" destination="xyY-Hn-vi1" id="oHL-T9-5d5"/>
+                <outlet property="followerLabel" destination="hSI-Jl-DKX" id="Ywa-Fl-O1H"/>
                 <outlet property="followerNumber" destination="poZ-1h-OnY" id="aP0-tQ-stn"/>
                 <outlet property="profilePhoto" destination="e9N-Tk-RGH" id="RyC-PP-2hu"/>
             </connections>
